@@ -10,18 +10,13 @@ package thread;
  * 执行时执行start()方法
  **/
 public class DoSomething implements Runnable{
-    private String name;
-
-    public DoSomething(String name) {
-        this.name = name;
-    }
-
     public void run() {
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 2; j++) {
-                System.out.println(name + ":" + i);
-            }
+        // 测试ThreadPoolExecutor创建线程池
+        try {
+            Thread.sleep(2000);
+            System.out.println(Thread.currentThread().getName() + "正在运行");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
-
 }
